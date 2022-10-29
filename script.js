@@ -8,9 +8,20 @@ loveMe.addEventListener("click", (e) => {
     clickTime = new Date().getTime();
   } else {
     if (new Date().getTime() - clickTime < 800) {
-      console.log(123);
+      createHeart(e);
+      clickTime = 0;
     } else {
       clickTime = new Date().getTime();
     }
   }
 });
+
+const createHeart = (e) => {
+  const heart = document.createElement("i");
+  heart.classList.add("fas");
+  heart.classList.add("fa-heart");
+
+  const x = e.clientX;
+  const y = e.clientY;
+  console.log(x, y);
+};
